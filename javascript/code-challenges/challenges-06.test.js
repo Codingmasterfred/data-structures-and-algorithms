@@ -23,16 +23,28 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
-  return arr.map(arrr =>{
-    let array = []
-     let ObjectName = arrr.name
-     array.push(ObjectName)
-     for (let index = 0; index < array.length; index++) {
-      const element = array[index];
-      return element.reverse()
-     }
-     return ObjectName
-  })
+
+  let reverseString = (sting) => {
+    let stringThatIsSplit = sting.split('');
+    let reverseString = stringThatIsSplit.reverse();
+    let joinString = reverseString.join('');
+    return joinString;
+  };
+
+
+  let nameArray = arr.map((arr) => {
+    return arr.name;
+  });
+
+  let returnArray = [];
+
+  for (let index = 0; index < nameArray.length; index++) {
+    const element = nameArray[index];
+    //  console.log(element);
+    //  console.log(reverseString(element));
+    returnArray.push(reverseString(element));
+  }
+  return returnArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +55,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
- return str + " The end."
+  return str + " The end."
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,9 +92,10 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
-const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
-};
+const addBirthYearProperty = (obj, year) =>
+  obj.yearBorn = year
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -134,7 +147,7 @@ Run your tests from the console: jest challenges-02.test.js
 
 describe('Testing challenge 1', () => {
   test('It returns an array of names reversed', () => {
-    expect(getNames([{name:'lloyd', age: 32, shoeSize: 12}, {name:'jamie', age:21, shoeSize: 8}])).toStrictEqual(['dyoll', 'eimaj']);
+    expect(getNames([{ name: 'lloyd', age: 32, shoeSize: 12 }, { name: 'jamie', age: 21, shoeSize: 8 }])).toStrictEqual(['dyoll', 'eimaj']);
     expect(getNames([])).toStrictEqual([]);
   });
 });
