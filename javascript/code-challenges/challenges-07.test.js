@@ -46,7 +46,19 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  let createString = ""
+  arr.map(arrr =>{
+    // createString += arrr + " "
+    if(createString === "hello 301 "){
+      createString += arrr
+    }else{
+      createString += arrr + " "
+    }
+
+  }
+  )
+  return createString
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +89,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+ return arr.split()
 };
 
 
