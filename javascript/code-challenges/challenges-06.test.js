@@ -29,7 +29,7 @@ const getNames = (arr) => {
     let reverseString = stringThatIsSplit.reverse();
     let joinString = reverseString.join('');
     return joinString; 
-  };   
+  };    
 
 
   let nameArray = arr.map((arr) => {
