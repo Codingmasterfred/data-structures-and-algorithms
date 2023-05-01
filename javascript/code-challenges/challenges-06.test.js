@@ -28,8 +28,8 @@ const getNames = (arr) => {
     let stringThatIsSplit = sting.split('');
     let reverseString = stringThatIsSplit.reverse();
     let joinString = reverseString.join('');
-    return joinString;
-  };
+    return joinString; 
+  };    
 
 
   let nameArray = arr.map((arr) => {
