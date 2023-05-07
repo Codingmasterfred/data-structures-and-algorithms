@@ -72,7 +72,16 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+ for(let i = 0; i < str.length; i++){
+  if(str[i] === "w"){
+    return true
+  }
+ }
+ if(!true){
+  return false
+
+}
+
 };
 
 /* ------------------------------------------------------------------------------------------------
