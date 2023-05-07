@@ -61,7 +61,7 @@ const sortByChildren = (charArray) => {
     } else {
       return a.house.localeCompare(b.house);
     }
-  });return characters
+  }); return characters
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,17 +72,13 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
- for(let i = 0; i < str.length; i++){
-  if(str[i] === "w"){
-    return true
-  }
- }
- if(!true){
-  return false
+  const pattern = /w/;
+  return pattern.test(str);
+
+  
+    
 
 }
-
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -97,7 +93,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  return /\d/.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +104,7 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  return /world/.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,7 +116,13 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const regex = /\b[A-Z][a-z]*\b/g;
+  
+  // find all matches in str
+  const matches = str.match(regex);
+  
+  // return array containing all matches
+  return matches || []
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,8 +132,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
-};
+  if (!Array.isArray(arr)) {
+    return [];
+  }
+
+  const regex = /^[A-J]/i;
+
+  const filteredCities = arr.filter(city => regex.test(city));
+
+  return filteredCities;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
