@@ -18,7 +18,7 @@ CHALLENGE 2
 Write a function named findMax that takes in a matrix of positive numbers and returns the number with the highest value.
 
 For example:
-[
+[ 
   [1, 3, 4, 5],
   [4, 5, 6],
   [23, 5, 5]
@@ -86,7 +86,19 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  const totals = [];
+
+  for (let i = 0; i < stores[0].length; i++) {
+    let sum = 0;
+    
+    for (let j = 0; j < stores.length; j++) {
+      sum += stores[j][i];
+    }
+
+    totals.push(sum);
+  }
+
+  return totals;
 
 };
 
@@ -100,9 +112,23 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
-const salesData = (hours, data) => {
-  // Solution code here...
+const salesData = (hours, hourlySales) => {
+  const formattedData = [];
+
+  hourlySales.forEach((sales, index) => {
+    const data = {
+      sales: `${sales} cookies`,
+      time: hours[index]
+    };
+    formattedData.push(data);
+  });
+
+  return formattedData;
 };
+
+const combinedSales = cookieStores.reduce((acc, storeSales) => {
+  return acc.map((sales, index) => sales + storeSales[index]);
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -126,8 +152,11 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  const petStore = arr.find((store) => store.store === 'Pet store');
+  const treats = petStore.items.find((item) => item.name === 'Treats');
+  return treats.quantity;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
