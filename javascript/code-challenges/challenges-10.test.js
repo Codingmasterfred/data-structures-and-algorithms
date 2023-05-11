@@ -11,7 +11,7 @@ function returnTen(str){
   const characters = str.split('');
   return characters.splice(-10);
 }
-
+ 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
