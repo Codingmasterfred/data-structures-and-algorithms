@@ -93,7 +93,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  return /\d/.test(input);
+  return /\d/.test(input); 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,9 +132,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  if (!Array.isArray(arr)) {
-    return [];
-  }
+
 
   const regex = /^[A-J]/i;
 
