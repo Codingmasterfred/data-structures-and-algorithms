@@ -7,9 +7,9 @@ Write a function named longestString that takes in an array of strings and retur
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-  let longestIndex = 0;
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i].length > arr[longestIndex].length) {
+  let longestIndex = -1;
+  for (let i = 0; i < arr.length; i++) {
+    if (longestIndex === -1 || arr[i].length > arr[longestIndex].length) {
       longestIndex = i;
     }
   }
